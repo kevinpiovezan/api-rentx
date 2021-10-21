@@ -1,0 +1,3 @@
+class CreateSessionUseCase {}
+
+export { CreateSessionUseCase };
