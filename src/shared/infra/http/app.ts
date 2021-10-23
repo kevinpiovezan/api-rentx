@@ -5,6 +5,9 @@ import 'dotenv/config';
 import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
 
+import * as Sentry from '@sentry/node';
+import * as Tracing from '@sentry/tracing';
+
 import swaggerFile from '../../../swagger.json';
 import { AppError } from '../../errors/AppError';
 import createConnection from '../typeorm';
@@ -15,6 +18,18 @@ import '../../container';
 import upload from '../../../config/upload';
 
 export const app = express();
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  integrations: [
+    new Sentry.Integrations.Http({ tracing: true }),
+    new Tracing.Integrations.Express({ app }),
+  ],
+  tracesSampleRate: 1.0,
+});
+app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
+
 createConnection();
 app.use(express.json());
 app.use(rateLimiter);
@@ -23,6 +38,7 @@ app.use('/cars', express.static(`${upload.tmpFolder}/cars`));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(cors());
 app.use(router);
+app.use(Sentry.Handlers.errorHandler());
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
     if (err instanceof AppError) {
