@@ -8,6 +8,7 @@ import cors from 'cors';
 import swaggerFile from '../../../swagger.json';
 import { AppError } from '../../errors/AppError';
 import createConnection from '../typeorm';
+import rateLimiter from './middlewares/rateLimiterRedis';
 import { router } from './routes';
 
 import '../../container';
@@ -16,6 +17,7 @@ import upload from '../../../config/upload';
 export const app = express();
 createConnection();
 app.use(express.json());
+app.use(rateLimiter);
 app.use('/avatar', express.static(`${upload.tmpFolder}/avatar`));
 app.use('/cars', express.static(`${upload.tmpFolder}/cars`));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
