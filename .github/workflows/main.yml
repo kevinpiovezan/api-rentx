@@ -34,6 +34,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           password: app
+          
         with:
           source: "., !node_modules"
           target: "test"
