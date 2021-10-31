@@ -44,11 +44,11 @@
 
 <br>
 
-##Links para teste e consulta
+### Links para teste e consulta
 - [DOCUMENTAÇÃO](https://rentx.kevinpiovezan.com.br/api-docs/)
 - [API](https://rentx.kevinpiovezan.com.br)
 
-## Páginas das Tecnologias usadas nesse projeto!
+### Páginas das Tecnologias usadas nesse projeto!
 - [TYPESCRIPT](https://www.javascript.com)
 - [NODE](https://nodejs.org/en/)
 - [EXPRESS](https://expressjs.com/pt-br/)
