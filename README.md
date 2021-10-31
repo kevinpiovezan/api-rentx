@@ -37,7 +37,6 @@
 - [x] Resetar a senha do usuário
 - [x] Cadastrar aluguel de um veículo disponível
 - [x] Devolver um veículo que o usuário alugou
-- [x] Devolver um veículo que o usuário alugou
 - [x] Listar todos alugueis do usuário
 - [ ] Testes unitários(Iniciado)
 - [ ] Testes de integração(Iniciado)
