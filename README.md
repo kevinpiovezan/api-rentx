@@ -46,12 +46,18 @@
 <br>
 
 ##Links para teste e consulta
-- [API](https://rentx.kevinpiovezan.com.br)
 - [DOCUMENTAÇÃO](https://rentx.kevinpiovezan.com.br/api-docs/)
+- [API](https://rentx.kevinpiovezan.com.br)
 
 ## Páginas das Tecnologias usadas nesse projeto!
 - [TYPESCRIPT](https://www.javascript.com)
 - [NODE](https://nodejs.org/en/)
+- [EXPRESS](https://expressjs.com/pt-br/)
+- [DOCKER](https://www.docker.com/)
+- [JEST](https://jestjs.io/)
+- [POSTGRESSQL](https://www.postgresql.org/)
+- [AMAZON WEB SERVICES](https://aws.amazon.com/pt/)
+- [SWAGGER](https://swagger.io/)
 
 ### Autor
 ---
